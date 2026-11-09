@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261109">
+<link rel="stylesheet" href="css/style.css?v=20261109b">
 
 </head>
 <body>
@@ -22,20 +22,18 @@
     <a href="index.html" class="logo">Studio Urody <span>Jolanta Karwańska</span></a>
     <button type="button" class="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
     <ul class="menu" id="menu">
-      <li><a href="index.html">Start</a></li>
-      <li><a href="o-mnie.html">O mnie</a></li>
-      <li class="has-sub"><a href="oferta.html" class="active">Oferta</a>
-        <ul class="submenu">
-          <li><a href="zabiegi-na-twarz.html" class="active">Zabiegi na twarz</a></li>
+      <li class="has-sub"><button type="button" class="sub-toggle active" aria-expanded="false" aria-controls="submenu">Zabiegi</button>
+        <ul class="submenu" id="submenu">
+          <li><a href="zabiegi-na-twarz.html" class="active" aria-current="page">Zabiegi na twarz</a></li>
           <li><a href="brwi-i-rzesy.html">Brwi i rzęsy</a></li>
           <li><a href="depilacja.html">Depilacja woskiem</a></li>
           <li><a href="strefa-meska.html">Strefa męska</a></li>
           <li><a href="manicure-pedicure.html">Manicure i pedicure</a></li>
         </ul>
       </li>
-      <li><a href="sprzet.html">Sprzęt</a></li>
       <li><a href="cennik.html">Cennik</a></li>
-      <li><a href="galeria.html">Galeria</a></li>
+      <li><a href="sprzet.html">Sprzęt</a></li>
+      <li><a href="o-mnie.html">O mnie</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
     </ul>
     <a class="btn" href="tel:+48517030599" aria-label="Zadzwoń: 517 030 599">📞 517 030 599</a>
@@ -45,7 +43,7 @@
 <main>
 <section class="page-hero" style="background-image:linear-gradient(90deg,rgba(250,243,236,.95) 0%,rgba(250,243,236,.85) 50%,rgba(250,243,236,.35) 100%),url('images/gabinet-twarz.jpg');background-position:center">
   <div class="wrap">
-    <p class="crumbs"><a href="index.html">Start</a><span>/</span><a href="oferta.html">Oferta</a><span>/</span>Zabiegi na twarz</p>
+    <p class="crumbs"><a href="index.html">Start</a><span>/</span>Zabiegi na twarz</p>
     <h1>Zabiegi na twarz</h1>
     <p>Specjalność studia – od oczyszczania i peelingów chemicznych po mezoterapię, radiofrekwencję mikroigłową i termolifting.</p>
   </div>
@@ -188,7 +186,7 @@
         <p>Pon.–pt. 9:00–17:00</p>
       </div>
       <div>
-        <h4>Oferta</h4>
+        <h4>Zabiegi</h4>
         <ul>
           <li><a href="zabiegi-na-twarz.html">Zabiegi na twarz</a></li>
           <li><a href="brwi-i-rzesy.html">Brwi i rzęsy</a></li>
@@ -218,9 +216,16 @@
 <a class="btn call-fab" href="tel:+48517030599">📞 Zadzwoń i umów wizytę</a>
 
 <script>
-(function(){var b=document.querySelector('.burger'),m=document.getElementById('menu');if(!b||!m)return;
-b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o);});
-document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open')){m.classList.remove('open');b.setAttribute('aria-expanded','false');b.focus();}});})();
+(function(){
+var b=document.querySelector('.burger'),m=document.getElementById('menu'),t=document.querySelector('.sub-toggle'),li=t&&t.parentNode;
+function set(el,btn,o){el.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);}
+if(b&&m)b.addEventListener('click',function(){set(m,b,!m.classList.contains('open'));});
+if(t)t.addEventListener('click',function(e){e.stopPropagation();set(li,t,!li.classList.contains('open'));});
+document.addEventListener('click',function(e){if(li&&!li.contains(e.target))set(li,t,false);});
+document.addEventListener('keydown',function(e){if(e.key!=='Escape')return;
+ if(li&&li.classList.contains('open')){set(li,t,false);t.focus();}
+ else if(m&&m.classList.contains('open')){set(m,b,false);b.focus();}});
+})();
 </script>
 </body>
 </html>
