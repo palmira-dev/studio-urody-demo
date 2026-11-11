@@ -270,3 +270,20 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 .pricelist{scroll-margin-top:90px}
 .info small{font-size:.9rem;color:var(--muted)}
 .info dd a[href^="sms:"]{font-weight:400;color:var(--accent-dark)}
+
+/* ---------- voucher ---------- */
+.voucher-sec{padding:0 0 80px}
+.cennik-page .voucher-sec{padding-top:0}
+.voucher{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;
+  background:var(--surface);border:1.5px dashed var(--accent);border-radius:22px;padding:36px 40px;scroll-margin-top:90px}
+.voucher h2{margin-bottom:.4rem}
+.voucher p{color:#5a4a45;max-width:620px}
+.voucher .voucher-valid{margin-top:.6rem;font-size:.92rem;color:var(--accent-dark);font-weight:700}
+@media (max-width:640px){.voucher{padding:26px 22px}}
+
+/* ---------- regulamin (wersja Pani Joli) ---------- */
+.legal-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 24px;margin-bottom:2rem;line-height:1.8}
+.legal .rules{gap:.9rem;font-size:1.02rem}
+.legal-accept{margin-top:2rem;font-weight:700}
+.legal-sign{margin-top:1.2rem;color:var(--muted)}
+.legal-sign span{font-family:"Cormorant Garamond",serif;font-size:1.5rem;color:var(--ink)}
