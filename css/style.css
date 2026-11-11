@@ -287,3 +287,22 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 .legal-accept{margin-top:2rem;font-weight:700}
 .legal-sign{margin-top:1.2rem;color:var(--muted)}
 .legal-sign span{font-family:"Cormorant Garamond",serif;font-size:1.5rem;color:var(--ink)}
+
+/* ---------- voucher z ilustracją ---------- */
+.voucher-top{padding:80px 0 0}
+.voucher{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;justify-content:normal;border-style:solid;border-width:1px;border-color:var(--line);background:var(--surface)}
+.voucher .voucher-valid{display:inline-block;background:var(--soft);border-radius:999px;padding:6px 14px;margin:.4rem 0 1.4rem}
+.voucher-img{display:block}
+.voucher-img img{width:100%;border-radius:10px;box-shadow:0 18px 40px rgba(30,20,15,.28);transform:rotate(-2.5deg);transition:transform .3s}
+.voucher-img:hover img{transform:rotate(0) scale(1.02)}
+@media (max-width:860px){.voucher{grid-template-columns:1fr;gap:30px}.voucher-img img{transform:none}}
+/* ---------- voucher – wyróżnienie ---------- */
+.voucher-facts{list-style:none;display:grid;gap:6px;margin:.2rem 0 1.6rem}
+.voucher-facts li{position:relative;padding-left:22px;color:#5a4a45;font-size:.97rem}
+.voucher-facts li::before{content:"";position:absolute;left:0;top:.65em;width:10px;height:1.5px;background:var(--accent)}
+.voucher-facts strong{color:var(--accent-dark)}
+.hero-gift{display:inline-flex;gap:8px;align-items:center;margin-top:1.4rem;padding:9px 18px;border-radius:999px;background:rgba(255,255,255,.75);
+  border:1px dashed var(--accent);color:var(--accent-dark);font-weight:700;font-size:.92rem;text-decoration:none}
+.hero-gift span{font-weight:400;color:var(--ink)}
+.hero-gift:hover{background:#fff}
+#voucher{scroll-margin-top:80px}
