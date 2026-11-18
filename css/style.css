@@ -306,3 +306,16 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 .hero-gift span{font-weight:400;color:var(--ink)}
 .hero-gift:hover{background:#fff}
 #voucher{scroll-margin-top:80px}
+
+/* ---------- zabieg ze zdjęciami (mezoterapia mikroigłowa) ---------- */
+.treatment > .treatment-pics{grid-column:1 / -1;grid-row:2}
+.treatment-pics{display:grid;grid-template-columns:1.5fr 1fr;gap:12px;margin-top:16px}
+.treatment-pics img{width:100%;height:260px;object-fit:cover;border-radius:10px}
+.treatment-pics img:last-child{object-position:center 60%}
+.treatment-areas{margin-top:.5rem;color:var(--ink)!important}
+.treatment-areas strong{color:var(--accent-dark)}
+@media (max-width:640px){.treatment > .treatment-pics{grid-row:auto}.treatment-pics img{height:170px}}
+.device-pics.pair{grid-template-columns:1.5fr 1fr}
+.device-pics.pair img{aspect-ratio:auto;height:380px;object-fit:cover}
+.device-pics.pair img + img{aspect-ratio:auto;object-position:center 60%}
+@media (max-width:860px){.device-pics.pair img{height:240px}}
