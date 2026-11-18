@@ -223,7 +223,7 @@ footer{background:var(--surface);border-top:1px solid var(--line);padding:48px 0
 .prices li:last-child{border-bottom:0}
 .prices li strong{color:var(--accent-dark);white-space:nowrap;font-size:1rem}
 .prices li.single{justify-content:flex-end;border:0}
-.prices li.single strong{font-size:1.25rem;font-family:"Cormorant Garamond",serif}
+/* pojedyncza cena – ten sam styl co pozostałe ceny */
 @media (max-width:640px){.treatment{grid-template-columns:1fr}.treatment .prices{grid-column:1;grid-row:auto;min-width:0;border-top:1px solid var(--line);margin-top:10px;padding-top:10px}.prices li.single{justify-content:flex-start}}
 .group-title{font-size:clamp(1.8rem,3.4vw,2.3rem);margin:3.2rem 0 .3rem;scroll-margin-top:90px}
 .group-desc{color:var(--muted);max-width:720px;margin-bottom:.6rem}
@@ -239,7 +239,7 @@ footer{background:var(--surface);border-top:1px solid var(--line);padding:48px 0
 .pl-title a{font-size:.88rem}
 .pl-group{font-size:1.3rem;margin:1.4rem 0 .3rem;color:var(--accent-dark)}
 .pl-row{display:flex;justify-content:space-between;gap:20px;padding:7px 0;border-bottom:1px dotted var(--line);font-size:.97rem}
-.pl-row strong{white-space:nowrap;color:var(--ink)}
+.pl-row strong{white-space:nowrap;color:var(--accent-dark);font-size:1rem}
 .pl-head{border-bottom:0;padding-bottom:0;font-weight:700}
 .pl-sub{padding-left:16px;color:var(--muted)}
 @media (max-width:640px){.pricelist{padding:22px 18px}}
@@ -324,3 +324,6 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 .device-pics.trio img{aspect-ratio:4/3;object-fit:cover}
 .device-pics.trio img:first-child{grid-column:1 / -1;aspect-ratio:3/2}
 .device-pics.trio img + img{aspect-ratio:4/3}
+
+/* ceny na kartach oferty – kolor akcentu (nadpisuje .card p) */
+.card .price{color:var(--accent-dark)}
