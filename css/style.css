@@ -319,3 +319,8 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 .device-pics.pair img{aspect-ratio:auto;height:380px;object-fit:cover}
 .device-pics.pair img + img{aspect-ratio:auto;object-position:center 60%}
 @media (max-width:860px){.device-pics.pair img{height:240px}}
+
+.device-pics.trio{grid-template-columns:1fr 1fr}
+.device-pics.trio img{aspect-ratio:4/3;object-fit:cover}
+.device-pics.trio img:first-child{grid-column:1 / -1;aspect-ratio:3/2}
+.device-pics.trio img + img{aspect-ratio:4/3}
